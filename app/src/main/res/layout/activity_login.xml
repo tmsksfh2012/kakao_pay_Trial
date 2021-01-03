@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#E6E6E6"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="로그인 화면"
+        android:textStyle="bold"
+        android:textSize="20sp"></TextView>
+
+    <EditText
+        android:id="@+id/name_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:hint="아이디"
+        android:padding="10dp"></EditText>
+
+    <EditText
+        android:id="@+id/pass_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E4D68B"
+        android:textColor="@android:color/black"
+        android:text="로그인"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#B3B3B3" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="회원가입" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 찾기" />
+    </LinearLayout>
+</LinearLayout>

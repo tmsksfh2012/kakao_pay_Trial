@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_btm_nav_manage"
+        android:icon="@drawable/photo1"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/main_btm_nav_manage"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_send"
+        android:icon="@drawable/photo2"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="@string/main_btm_nav_send"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_pay"
+        android:icon="@drawable/photo3"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="@string/main_btm_nav_pay"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_invest"
+        android:icon="@drawable/photo4"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="@string/main_btm_nav_invest"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_more_view"
+        android:icon="@drawable/photo5"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="@string/main_btm_nav_more_view"/>
+</menu>

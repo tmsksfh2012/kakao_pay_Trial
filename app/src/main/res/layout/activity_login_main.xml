@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".src.login.LoginMainActivity">
 
     <ImageView
         android:layout_width="100dip"
@@ -24,14 +26,28 @@
         app:ci_height="7dp"
         app:ci_margin="4dp"
         app:ci_width="7dp"/>
-    <com.google.android.material.button.MaterialButton
+
+    <LinearLayout
         android:id="@+id/more_view_btn_login"
-        android:background="@drawable/rounded_bg_yellow"
         android:layout_width="250dip"
         android:layout_height="60dip"
+        android:background="@drawable/rounded_bg_yellow"
+        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:text="로그인"
-        android:textSize="25sp"
+        android:gravity="center"
         android:clickable="true"
-        android:textStyle="bold"/>
+        android:focusable="true">
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_kakao"
+            android:layout_marginEnd="10dip"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 </LinearLayout>

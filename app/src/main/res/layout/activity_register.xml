@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입을 시작합니다!"
+        android:textSize="30sp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카카오계정 하나로\nKakao, Daum, Melon 서비스를 모두 이용할 수 있어요."
+        android:textSize="15sp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카카오계정으로 사용할 이메일이 있나요?"
+        android:textSize="15sp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/register_btn_fir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@color/kakaoYellow"
+        android:text="이메일이 있습니다."
+        android:textColor="#555555"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <Button
+        android:id="@+id/register_btn_sec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#DDDDDD"
+        android:text="새 메일이 필요합니다."
+        android:textColor="#555555"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="20dp"/>
+
+</LinearLayout>

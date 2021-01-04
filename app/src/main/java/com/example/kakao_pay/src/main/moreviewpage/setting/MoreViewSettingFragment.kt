@@ -30,7 +30,7 @@ class MoreViewSettingFragment:BaseFragment<FragmentSettingBinding>
     private fun settingContentsRecyclerViewSetting(contentsList: ArrayList<SettingContents>){
         Log.d("setting", "settingContentsRecyclerViewSetting")
         this.settingContentsAdapter = MoreViewSettingRecyclerViewAdapter()
-        this.settingContentsAdapter.submitList
+        this.settingContentsAdapter.submitList(contentsList)
 
     }
 

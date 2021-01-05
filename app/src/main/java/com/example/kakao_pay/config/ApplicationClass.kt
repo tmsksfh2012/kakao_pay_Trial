@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.example.kakao_pay.src.utils.API
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,10 +14,10 @@ import java.util.concurrent.TimeUnit
 // 앱이 실행될때 1번만 실행이 됩니다.
 class ApplicationClass : Application() {
     // 테스트 서버 주소
-    val API_URL = "https://members.softsquared.com/"
+    //val API_URL = "https://members.softsquared.com/"
 
     // 실제 서버 주소
-    // val API_URL = ""
+     val API_URL = API.BASE_URL
 
     // 전역변수 문법
     companion object {

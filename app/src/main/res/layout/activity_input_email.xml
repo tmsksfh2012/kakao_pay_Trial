@@ -18,10 +18,12 @@
         android:textSize="22sp"
         android:textColor="@color/black"/>
     <EditText
+        android:id="@+id/edit_email"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="이메일 주소 입력"/>
+        android:hint="이메일 주소 입력"
+        android:maxLines="1"/>
     <Button
         android:id="@+id/btn_email_send"
         android:layout_width="match_parent"

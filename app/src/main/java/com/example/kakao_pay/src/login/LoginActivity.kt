@@ -6,14 +6,14 @@ import android.os.Handler
 import android.os.Looper
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivityLoginBinding
-import com.example.kakao_pay.src.login.login_manager.LoginManagerDialog
+import com.example.kakao_pay.src.login.login_manager.DialogLoginManager
 import com.example.kakao_pay.src.login.register.RegisterActivity
 
 class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var  mLoginManagerDialog = LoginManagerDialog()
+        var  mLoginManagerDialog = DialogLoginManager()
 
         binding.btnLoginManager.paint?.isUnderlineText = true
 

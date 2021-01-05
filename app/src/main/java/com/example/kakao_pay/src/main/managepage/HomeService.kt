@@ -3,7 +3,7 @@ package com.example.kakao_pay.src.main.managepage
 import com.example.kakao_pay.config.ApplicationClass
 import com.example.kakao_pay.src.main.managepage.models.PostSignUpRequest
 import com.example.kakao_pay.src.main.managepage.models.SignUpResponse
-import com.example.kakao_pay.src.main.managepage.models.UserResponse
+import com.example.kakao_pay.src.login.register.email_input.models.PostEmailResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -11,12 +11,12 @@ import retrofit2.Response
 class HomeService(val view: HomeFragmentView) {
     fun tryGetUsers(){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse> {
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                view.onGetUserSuccess(response.body() as UserResponse)
+        homeRetrofitInterface.getUsers().enqueue(object : Callback<PostEmailResponse> {
+            override fun onResponse(call: Call<PostEmailResponse>, response: Response<PostEmailResponse>) {
+                view.onGetUserSuccess(response.body() as PostEmailResponse)
             }
 
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+            override fun onFailure(call: Call<PostEmailResponse>, t: Throwable) {
                 view.onGetUserFailure(t.message ?: "통신 오류")
             }
         })

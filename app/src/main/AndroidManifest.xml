@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kakao_pay">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".config.ApplicationClass"
         android:allowBackup="true"
@@ -34,7 +36,13 @@
         <activity android:name=".src.login.register.RegisterEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".src.login.register.RegisterEmailInputActivity"
+        <activity android:name=".src.login.register.email_input.RegisterInputEmailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".src.login.register.email_input.email_certify.RegisterCertifyEmailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".src.login.register.making_password.RegisterMakePasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 

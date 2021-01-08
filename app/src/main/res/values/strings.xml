@@ -30,5 +30,7 @@
 
     <!-- Setting -->
     <string name="more_view_setting_logout">로그아웃</string>
+    <!-- Text Size -->
+    <string name="input_text_size">16dp</string>
 
 </resources>

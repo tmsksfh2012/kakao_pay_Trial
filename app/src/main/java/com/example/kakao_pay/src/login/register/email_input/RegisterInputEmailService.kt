@@ -9,7 +9,8 @@ import retrofit2.Response
 
 class RegisterInputEmailService(val view: RegisterInputEmailView) {
     fun tryPostEmail(emailRequest : PostEmailRequest){
-        val registerEmailRetrofitInterface = ApplicationClass.sRetrofit.create(RegisterInputEmailRetrofitInterface::class.java)
+        val registerEmailRetrofitInterface = ApplicationClass.sRetrofit
+            .create(RegisterInputEmailRetrofitInterface::class.java)
         registerEmailRetrofitInterface.postEmail(emailRequest).enqueue(object : Callback<PostEmailResponse>{
             override fun onResponse(call: Call<PostEmailResponse>, response: Response<PostEmailResponse>) {
                 view.onPostEmailSuccess(response.body() as PostEmailResponse)

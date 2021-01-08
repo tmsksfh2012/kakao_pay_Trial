@@ -1,6 +1,5 @@
-package com.example.kakao_pay.src.login.register.email_input.email_certify.dialogs
+package com.example.kakao_pay.src.login.register.making_profile.dialogs
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.kakao_pay.R
 
-class DialogErrAuthNum  : DialogFragment() {
+class DialogBirthErr : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +18,7 @@ class DialogErrAuthNum  : DialogFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val view = inflater.inflate(R.layout.dialog_err_auth_num, container, false)
+        val view = inflater.inflate(R.layout.dialog_err_birth, container, false)
         isCancelable = false
 
         return view.rootView
@@ -27,11 +26,12 @@ class DialogErrAuthNum  : DialogFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        view?.apply {
-            findViewById<Button>(R.id.btn_err_authNum).setOnClickListener {
+        view?.apply{
+            findViewById<ImageView>(R.id.birth_err_clear).setOnClickListener {
                 dismiss()
             }
-            findViewById<ImageView>(R.id.err_authNum_clear).setOnClickListener {
+
+            findViewById<Button>(R.id.btn_birth_retry).setOnClickListener {
                 dismiss()
             }
         }

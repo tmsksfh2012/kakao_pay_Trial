@@ -7,7 +7,7 @@ import android.os.Looper
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivityLoginBinding
 import com.example.kakao_pay.src.login.login_manager.DialogLoginManager
-import com.example.kakao_pay.src.login.register.RegisterActivity
+import com.example.kakao_pay.src.login.register.RegisterMainActivity
 
 class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inf
             showLoadingDialog(this)
             Handler(Looper.getMainLooper()).postDelayed({
                 dismissLoadingDialog()
-                startActivity(Intent(this, RegisterActivity::class.java))
+                startActivity(Intent(this, RegisterMainActivity::class.java))
             },500)
         }
     }

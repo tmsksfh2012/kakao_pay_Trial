@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.example.kakao_pay.R
-import com.example.kakao_pay.config.BaseFragment
-import com.example.kakao_pay.databinding.FragmentSettingBinding
+import com.example.kakao_pay.config.BaseActivity
+import com.example.kakao_pay.databinding.ActivitySettingBinding
 import com.example.kakao_pay.src.main.moreviewpage.setting.models.SettingContents
 
-class MoreViewSettingFragment:BaseFragment<FragmentSettingBinding>
-    (FragmentSettingBinding::bind, R.layout.fragment_setting),
+class MoreViewSettingFragment:BaseActivity<ActivitySettingBinding>
+    (ActivitySettingBinding::inflate),
     MoreViewSettingFragmentView, View.OnClickListener {
 
     // 데이터

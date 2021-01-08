@@ -1,5 +1,9 @@
 package com.example.kakao_pay.src.utils
 
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+
 object Constants{
     const val TAG : String = "TAG"
 }

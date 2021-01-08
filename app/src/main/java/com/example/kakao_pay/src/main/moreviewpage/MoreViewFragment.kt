@@ -11,7 +11,9 @@ class MoreViewFragment:BaseFragment<FragmentMoreViewBinding>(FragmentMoreViewBin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.moreViewImgSetting.setOnClickListener {  }
+        binding.moreViewImgSetting.setOnClickListener {
+
+        }
     }
 
 }

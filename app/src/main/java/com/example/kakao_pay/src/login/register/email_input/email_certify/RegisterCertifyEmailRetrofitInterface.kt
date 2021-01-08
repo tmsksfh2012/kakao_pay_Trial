@@ -6,9 +6,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RegisterCertifyEmailRetrofitInterface {
-    @GET("/email")
+    @GET("/email/auth")
     fun getEmail(
         @Query("email") email : String,
-        @Query("authNum") authNum : String
+        @Query("auth_number") auth_number : String
     ) : Call<GetEmailResponse>
 }

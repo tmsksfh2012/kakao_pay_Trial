@@ -6,27 +6,74 @@
     android:paddingHorizontal="25dp"
     android:orientation="vertical">
     <ImageView
-        android:layout_width="45dp"
+        android:id="@+id/back"
+        android:layout_width="30dp"
         android:layout_height="45dp"
-        android:paddingStart="-27dp"
+        android:paddingStart="-10dp"
+        android:paddingTop="20dp"
         android:src="@drawable/ic_left"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="30dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="카카오계정으로 사용할\n이메일을 입력해주세요."
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edit_email"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="이메일 주소 입력"
+        android:background="@drawable/inputbox_selector"
+        android:textSize="14sp"
+        android:paddingBottom="15dp"
         android:maxLines="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_marginBottom="8dp"
+                android:text="· 입력한 이메일주소로 인증번화 발송됩니다."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_marginBottom="8dp"
+                android:text="· 인증메일을 받을 수 있도록 자주 쓰는 이메일 주소를 입력해주세요."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_marginBottom="8dp"
+                android:text="· 사용중인 Daum 이메일이 있다면 Daum 아이디로 가입해주세요."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_marginBottom="30dp"
+            android:text="  Daum 아이디로 가입"
+            android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_email_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="인증메일 발송"/>
+        android:background="@drawable/btn_rounded_bg_gray"
+        android:text="인증메일 발송"
+        android:textColor="@color/grayText"/>
 </LinearLayout>

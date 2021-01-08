@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#fcfcfc</color>
-    <color name="colorPrimaryDark">#889dfe</color>
-    <color name="colorAccent">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#F7E600</color>
 
     <!-- 기본 -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
 
-    <color name="background">#EFEFEF</color>
+    <color name="background">#FFFFFF</color>
     <color name="blackForText">#4a4a4a</color>
     <color name="redForText">#d9534f</color>
 
     <color name="kakaoYellow">#F7E600</color>
-    <color name="grayLine">#959595</color>
+    <color name="grayLine">#DFDFDF</color>
+    <color name="grayEditText">#C8C8C8</color>
     <color name="grayText">#757575</color>
+    <color name="grayBg">#F1F1F1</color>
     <color name="lightGrayText">#444444</color>
 
 </resources>

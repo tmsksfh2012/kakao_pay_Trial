@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.kakao_pay.R
+import com.example.kakao_pay.src.login.register.making_profile.RegisterMakeProfileActivity
 
 class DialogBirthErr : DialogFragment() {
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_clear"
             android:layout_marginEnd="20dp"
-            android:layout_marginVertical="20dp"/>
+            android:layout_marginTop="15dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:datePickerMode="spinner"
             android:calendarViewShown="false"
-            android:id="@+id/datepicker" />
+            android:id="@+id/datePicker" />
 
         <Button
             android:layout_width="wrap_content"

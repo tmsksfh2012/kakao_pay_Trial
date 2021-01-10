@@ -29,25 +29,43 @@
             android:layout_height="wrap_content"
             android:text="닉네임"
             android:textColor="@color/black"/>
-        <com.google.android.material.textfield.TextInputLayout
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:id="@+id/edit_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:counterMaxLength="20">
+            android:maxLength="20"
+            android:textSize="14sp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:hint="닉네임을 입력하세요"
+            android:background="@drawable/inputbox_selector"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="닉네임"
+            android:textColor="@color/black"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_nickname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="20"
-                android:textSize="14sp"
-                android:paddingBottom="15dp"
-                android:textColor="@color/black"
-                android:maxLines="1"
-                android:hint="닉네임을 입력하세요"
-                android:background="@drawable/inputbox_selector"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:layout_marginTop="15dp"
+            android:id="@+id/edit_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:textSize="14sp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:hint="닉네임을 입력하세요"
+            android:background="@drawable/inputbox_selector"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,17 +83,17 @@
             android:background="@drawable/inputbox_selector">
 
             <LinearLayout
+                android:layout_marginTop="15dp"
+                android:paddingBottom="15dp"
                 android:id="@+id/layout_birth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/birth_year"
-                    android:layout_marginTop="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="연도"
                     android:textColor="@color/black"
-                    android:paddingBottom="15dp"
                     android:textSize="14sp"/>
 
                 <ImageView
@@ -89,12 +107,10 @@
 
                 <TextView
                     android:id="@+id/birth_mon"
-                    android:layout_marginTop="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="월"
                     android:textColor="@color/black"
-                    android:paddingBottom="15dp"
                     android:textSize="14sp"/>
 
                 <ImageView
@@ -107,12 +123,10 @@
                     android:layout_marginEnd="30dp"/>
                 <TextView
                     android:id="@+id/birth_day"
-                    android:layout_marginTop="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="일"
                     android:textColor="@color/black"
-                    android:paddingBottom="15dp"
                     android:textSize="14sp"/>
 
                 <ImageView
@@ -138,12 +152,11 @@
 
             <TextView
                 android:id="@+id/text_birth_type"
-                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="음력"
                 android:textColor="@color/black"
-                android:paddingBottom="15dp"
                 android:textSize="14sp"/>
 
         </LinearLayout>

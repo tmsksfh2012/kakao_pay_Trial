@@ -19,6 +19,7 @@
         android:text="카카오계정\n서비스약관에 동의해주세요."
         android:textSize="20sp"
         android:textColor="@color/black"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -28,18 +29,18 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/agree_title_check_box"/>
+            android:id="@+id/no_mail_agree_title_check_box"/>
 
         <TextView
-            android:id="@+id/agree_title"
+            android:id="@+id/no_mail_agree_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="모두 동의합니다."
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/agree_title_check_box"
-            app:layout_constraintBottom_toBottomOf="@id/agree_title_check_box"
+            app:layout_constraintStart_toEndOf="@id/no_mail_agree_title_check_box"
+            app:layout_constraintBottom_toBottomOf="@id/no_mail_agree_title_check_box"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -51,10 +52,11 @@
             android:textColor="@color/grayText"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/agree_title_check_box"
+            app:layout_constraintStart_toEndOf="@+id/no_mail_agree_title_check_box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/agree_title" />
+            app:layout_constraintTop_toBottomOf="@id/no_mail_agree_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
@@ -68,9 +70,9 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/agree_fir_check_box"/>
+            android:id="@+id/no_mail_agree_fir_check_box"/>
         <TextView
-            android:id="@+id/agree_fir"
+            android:id="@+id/no_mail_agree_fir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="만 14세 이상입니다."
@@ -83,17 +85,70 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
-            android:id="@+id/agree_sec_check_box"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/no_mail_agree_seven_check_box"/>
         <TextView
-            android:id="@+id/agree_sec"
+            android:id="@+id/no_mail_agree_seven"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="[필수] 카카오계정 약관"
             android:textSize="13sp"
             android:textColor="@color/blackForText"/>
     </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/no_mail_agree_sec_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            app:layout_constraintStart_toEndOf="@id/no_mail_agree_sec_check_box"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/no_mail_agree_sec_check_box"
+            android:id="@+id/no_mail_agree_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[필수] 카카오 통합서비스약관"
+            android:textSize="13sp"
+            android:textColor="@color/blackForText"/>
+
+        <TextView
+            android:id="@+id/no_mail_agree_sec_contents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다. 선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다."
+            android:textColor="@color/grayText"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/no_mail_agree_sec_check_box"
+            app:layout_constraintTop_toBottomOf="@id/no_mail_agree_sec" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/no_mail_agree_six_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/no_mail_agree_six"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[선택] 카카오알림 채널 추가 및 광고메시지 수신"
+            android:textSize="13sp"
+            android:textColor="@color/blackForText"/>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -102,9 +157,9 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/agree_thr_check_box"/>
+            android:id="@+id/no_mail_agree_thr_check_box"/>
         <TextView
-            android:id="@+id/agree_thr"
+            android:id="@+id/no_mail_agree_thr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="[필수] 개인정보 수집 및 이용 동의"
@@ -117,11 +172,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
-            android:id="@+id/agree_for_check_box"
+            android:id="@+id/no_mail_agree_five_check_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
-            android:id="@+id/agree_for"
+            android:id="@+id/no_mail_agree_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[선택] 위치정보 수집 및 이용 동의"
+            android:textSize="13sp"
+            android:textColor="@color/blackForText"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/no_mail_agree_for_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/no_mail_agree_for"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="[선택] 프로필 정보 추가 수집 동의"
@@ -129,7 +201,7 @@
             android:textColor="@color/blackForText"/>
     </LinearLayout>
     <Button
-        android:id="@+id/btn_agree"
+        android:id="@+id/btn_no_mail_agree"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

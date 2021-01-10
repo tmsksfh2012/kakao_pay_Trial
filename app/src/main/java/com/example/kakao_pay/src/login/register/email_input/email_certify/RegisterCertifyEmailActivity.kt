@@ -40,18 +40,6 @@ RegisterCertifyEmailView, RegisterInputEmailView{
             noCertifyEmail.show(supportFragmentManager, noCertifyEmail.tag)
         }
 
-        if(noCertifyEmail.isRemoving) {
-            val position = getUserSelectPosition()
-            if(position == 1) {
-                val postEmail = PostEmailRequest(email = email)
-                showLoadingDialog(this)
-                RegisterInputEmailService(this).tryPostEmail(postEmail)
-            }
-            else if(position == 2){
-                finish()
-            }
-        }
-
         binding.back.setOnClickListener {
             finish()
         }
@@ -124,4 +112,15 @@ RegisterCertifyEmailView, RegisterInputEmailView{
     override fun onPostEmailFailure(message: String) {
     }
 
+    fun onDetached() {
+        val position = getUserSelectPosition()
+        if(position == 1) {
+            val postEmail = PostEmailRequest(email = email)
+            showLoadingDialog(this)
+            RegisterInputEmailService(this).tryPostEmail(postEmail)
+        }
+        else if(position == 2){
+            finish()
+        }
+    }
 }

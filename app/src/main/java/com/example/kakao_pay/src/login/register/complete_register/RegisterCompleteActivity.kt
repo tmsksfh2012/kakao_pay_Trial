@@ -1,9 +1,11 @@
 package com.example.kakao_pay.src.login.register.complete_register
 
+import android.content.Intent
 import android.os.Bundle
 import com.example.kakao_pay.R
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivitySuccessMakingProfileBinding
+import com.example.kakao_pay.src.main.MainActivity
 import com.example.kakao_pay.src.utils.Constants.TAG
 
 class RegisterCompleteActivity : BaseActivity<ActivitySuccessMakingProfileBinding>(ActivitySuccessMakingProfileBinding::inflate) {
@@ -17,5 +19,9 @@ class RegisterCompleteActivity : BaseActivity<ActivitySuccessMakingProfileBindin
         binding.profileImg.clipToOutline = true
         binding.profileEmail.text = email
         binding.profileNickname.text = nickname
+
+        binding.btnStart.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+        }
     }
 }

@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.kakao_pay.R
 import com.example.kakao_pay.src.login.register.email_input.RegisterInputEmailActivity
+import com.example.kakao_pay.src.login.register.email_input.email_certify.RegisterCertifyEmailActivity
 import com.example.kakao_pay.src.utils.putUserSelectPosition
 
 class DialogNoCertifyEmail : DialogFragment() {
@@ -31,7 +32,9 @@ class DialogNoCertifyEmail : DialogFragment() {
         super.onActivityCreated(savedInstanceState)
         view?.apply {
             findViewById<Button>(R.id.btn_again_post_mail).setOnClickListener {
+                val myActivity = activity as RegisterCertifyEmailActivity
                 dismiss()
+                myActivity.onDetached()
                 putUserSelectPosition(1)
             }
             findViewById<ImageView>(R.id.no_mail_clear).setOnClickListener{

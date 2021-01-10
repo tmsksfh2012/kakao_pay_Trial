@@ -1,5 +1,6 @@
 package com.example.kakao_pay.src.login.register.making_profile.dialogs
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.DatePicker.OnDateChangedListener
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.kakao_pay.R
+import com.example.kakao_pay.src.login.register.making_profile.RegisterMakeProfileActivity
 import com.example.kakao_pay.src.utils.putUserSelectBirth
 
 
@@ -17,6 +19,7 @@ class DialogBirthChooser : DialogFragment() {
     lateinit var yy : String
     lateinit var  mm : String
     lateinit var  dd : String
+    lateinit var mainActivity : RegisterMakeProfileActivity
     var check = false
 
     override fun onCreateView(
@@ -28,6 +31,12 @@ class DialogBirthChooser : DialogFragment() {
         isCancelable = false
 
         return view.rootView
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mainActivity = activity as RegisterMakeProfileActivity
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -44,11 +53,16 @@ class DialogBirthChooser : DialogFragment() {
                 })
 
             findViewById<Button>(R.id.btn_date_picker).setOnClickListener {
+                if(mm.length == 1) mm = "0$mm"
+                if(dd.length == 1) dd = "0$dd"
+
                 putUserSelectBirth(yy, mm, dd)
+                mainActivity.onDetached()
                 dismiss()
             }
 
             findViewById<ImageView>(R.id.date_picker_clear).setOnClickListener {
+                mainActivity.onDetached()
                 dismiss()
             }
         }

@@ -14,5 +14,8 @@ class RegisterMainActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegis
         binding.registerBtnFir.setOnClickListener {
             startActivity(Intent(this, RegisterEmailActivity::class.java))
         }
+        binding.registerBtnSec.setOnClickListener {
+            startActivity(Intent(this, RegisterPhoneActivity::class.java))
+        }
     }
 }

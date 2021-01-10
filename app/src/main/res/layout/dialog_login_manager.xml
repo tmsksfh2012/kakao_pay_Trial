@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
-                android:background="@color/kakaoYellow"
+                android:background="@drawable/btn_rounded_bg_yellow"
                 android:text="이메일 또는 전화번호를 모르겠어요!"
                 android:textColor="@color/black"
                 android:textSize="12sp"/>
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="#DDDDDD"
+                android:background="@drawable/btn_rounded_bg_gray"
                 android:text="비밀번호를 모르겠어요!"
                 android:textColor="@color/black"
                 android:textSize="12sp"/>

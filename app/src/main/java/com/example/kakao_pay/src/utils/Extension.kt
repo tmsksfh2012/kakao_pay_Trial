@@ -41,10 +41,15 @@ fun putUserSelectBirth(year: String, month: String, day: String){
     editor.apply()
 }
 fun getUserPreferences(name: String) : String {
-    if(ApplicationClass.sSharedPreferences.getString(name, "") != null){
+    if(ApplicationClass.sSharedPreferences.getString(name, "") == null){
         return name
     }
     else {
         return ApplicationClass.sSharedPreferences.getString(name, "")!!
     }
+}
+fun putUserCountryCode(countryCode: String){
+    val editor = ApplicationClass.sSharedPreferences.edit()
+    editor.putString("countryCode",countryCode)
+    editor.apply()
 }

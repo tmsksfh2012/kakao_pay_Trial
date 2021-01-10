@@ -54,27 +54,6 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
             mDatePiker.show(supportFragmentManager, mDatePiker.tag)
         }
 
-        if (mDatePiker.isDetached) {
-            Log.d(TAG, "isDetached: Here")
-            lateinit var yy : String
-            lateinit var mm : String
-            lateinit var dd : String
-
-            if(getUserPreferences("year") == "year") yy = "연도"
-            if(getUserPreferences("month") == "month") yy = "월"
-            if(getUserPreferences("day") == "day") yy = "일"
-
-            binding.birthYear.text = Editable.Factory.getInstance().newEditable(yy)
-            binding.birthMon.text = Editable.Factory.getInstance().newEditable(mm)
-            binding.birthDay.text = Editable.Factory.getInstance().newEditable(dd)
-
-            if(binding.birthYear.text.toString() != "연도" && binding.birthMon.text.toString() != "월"
-                && binding.birthDay.text.toString() != "일"){
-                binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
-                binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.black))
-            }
-        }
-
         binding.btnNext.setOnClickListener {
             if (binding.editNickname.text.toString() == "") {
                 showCustomToast("닉네임이 등록되지 않았습니다. 닉네임을 입력해주세요.")
@@ -96,8 +75,7 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
                             birthday = birth,
                             nickname = binding.editNickname.text.toString(),
                             gender = "M",
-                            lunar_check = true,
-                            phone = ""
+                            lunar_check = true
                         )
                         showLoadingDialog(this)
                         RegisterMakeProfileService(this).tryPostProfile(postProfile)
@@ -110,8 +88,7 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
                             birthday = birth,
                             nickname = binding.editNickname.text.toString(),
                             gender = "G",
-                            lunar_check = true,
-                            phone = ""
+                            lunar_check = true
                         )
                         showLoadingDialog(this)
                         RegisterMakeProfileService(this).tryPostProfile(postProfile)
@@ -124,8 +101,7 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
                             birthday = birth,
                             nickname = binding.editNickname.text.toString(),
                             gender = "N",
-                            lunar_check = true,
-                            phone = ""
+                            lunar_check = true
                         )
                         showLoadingDialog(this)
                         RegisterMakeProfileService(this).tryPostProfile(postProfile)
@@ -141,8 +117,33 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
                             birthday = birth,
                             nickname = binding.editNickname.text.toString(),
                             gender = "M",
-                            lunar_check = false,
-                            phone = ""
+                            lunar_check = false
+                        )
+                        showLoadingDialog(this)
+                        RegisterMakeProfileService(this).tryPostProfile(postProfile)
+                    } else if (binding.checkGenderWomen.isChecked) {
+                        val birth =
+                            binding.birthYear.text.toString() + binding.birthMon.text.toString() + binding.birthDay.text.toString()
+                        val postProfile = PostProfileRequest(
+                            email = email,
+                            password = password,
+                            birthday = birth,
+                            nickname = binding.editNickname.text.toString(),
+                            gender = "G",
+                            lunar_check = false
+                        )
+                        showLoadingDialog(this)
+                        RegisterMakeProfileService(this).tryPostProfile(postProfile)
+                    } else if (binding.checkGenderNoChoose.isChecked) {
+                        val birth =
+                            binding.birthYear.text.toString() + binding.birthMon.text.toString() + binding.birthDay.text.toString()
+                        val postProfile = PostProfileRequest(
+                            email = email,
+                            password = password,
+                            birthday = birth,
+                            nickname = binding.editNickname.text.toString(),
+                            gender = "N",
+                            lunar_check = false
                         )
                         showLoadingDialog(this)
                         RegisterMakeProfileService(this).tryPostProfile(postProfile)
@@ -155,6 +156,7 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
 
     override fun onPostProfileSuccess(response: PostProfileResponse) {
         dismissLoadingDialog()
+        Log.d(TAG, "onPostProfileSuccess: " + response.code)
         when(response.code) {
             // 회원가입 성공
             1000 -> {
@@ -166,5 +168,24 @@ class RegisterMakeProfileActivity : BaseActivity<ActivityMakingProfileBinding>(A
 
     override fun onPostProfileFailure(message: String) {
 
+    }
+
+    fun onDetached() {
+        Log.d(TAG, "isDetached: Here")
+
+        val yy : String = getUserPreferences("year")
+        val mm : String = getUserPreferences("month")
+        val dd : String = getUserPreferences("day")
+
+
+        binding.birthYear.text = yy
+        binding.birthMon.text = mm
+        binding.birthDay.text = dd
+
+        if(binding.birthYear.text.toString() != "연도" && binding.birthMon.text.toString() != "월"
+            && binding.birthDay.text.toString() != "일"){
+            binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
+            binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.black))
+        }
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.kakao_pay.R
 import com.example.kakao_pay.src.login.LoginActivity
@@ -34,6 +35,9 @@ class DialogInputAreadyEmail : DialogFragment() {
                 startActivity(Intent(context, LoginActivity::class.java))
             }
             findViewById<Button>(R.id.btn_err_retry).setOnClickListener {
+                dismiss()
+            }
+            findViewById<ImageView>(R.id.img_same_email_clear).setOnClickListener {
                 dismiss()
             }
         }

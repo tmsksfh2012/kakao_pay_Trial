@@ -73,7 +73,7 @@ class RegisterMakePasswordActivity : BaseActivity<ActivityMakingPasswordBinding>
         }
 
         binding.btnNext.setOnClickListener {
-            val reg = Regex("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&]).{8,32}.$")
+            val reg = Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!%*#?&]).{8,32}.$")
 
             if(binding.editCertifyPassword.text.toString() != binding.editEmail.text.toString()){
                 showCustomToast("비밀번호가 일치하지 않습니다.")

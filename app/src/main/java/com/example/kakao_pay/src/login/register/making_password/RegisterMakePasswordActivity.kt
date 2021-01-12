@@ -4,7 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.EditText
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.kakao_pay.R
@@ -13,14 +15,18 @@ import com.example.kakao_pay.databinding.ActivityMakingPasswordBinding
 import com.example.kakao_pay.src.login.LoginActivity
 import com.example.kakao_pay.src.login.register.making_password.dialogs.DialogErrPasswordType
 import com.example.kakao_pay.src.login.register.making_profile.RegisterMakeProfileActivity
-import com.example.kakao_pay.src.utils.onMyTextChanged
-import com.example.kakao_pay.src.utils.Constants.TAG
+import com.example.kakao_pay.src.utils.OnMyTextChanged
 
-class RegisterMakePasswordActivity : BaseActivity<ActivityMakingPasswordBinding>(ActivityMakingPasswordBinding::inflate) {
+class RegisterMakePasswordActivity : BaseActivity<ActivityMakingPasswordBinding>(ActivityMakingPasswordBinding::inflate),
+    OnMyTextChanged{
     lateinit var email : String
+    var phone : String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        email = intent.extras?.getString("email").toString()
+        email = intent.extras?.getString("email")!!
+        phone = intent.extras?.getString("phone")
+
         binding.mainEmail.isClickable = false
         binding.mainEmail.isFocusable = false
         binding.mainEmail.setTextColor(Color.parseColor("#757575"))
@@ -33,44 +39,8 @@ class RegisterMakePasswordActivity : BaseActivity<ActivityMakingPasswordBinding>
         }
 
         // 수정 필요
-
-        if(binding.editEmail.isFocused) {
-            binding.editEmail.onMyTextChanged {
-                if (it.toString().count() == 8) {
-                    binding.editEmail.setBackgroundResource(R.drawable.inputbox_selector)
-                    Log.d(TAG, "EDITTEXT: " + it.toString())
-                } else if (it.toString().count() >= 8) {
-                    if (it.toString() == binding.editEmail.toString()) {
-                        binding.editCertifyPassword.setBackgroundResource(R.drawable.inputbox_selector)
-                        binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
-                        binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.black))
-                    }
-                } else if (it.toString().count() < 8) {
-                    binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_gray)
-                    binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.grayText))
-                }
-            }
-        }
-
-        else if(binding.editCertifyPassword.isFocused) {
-            binding.editCertifyPassword.onMyTextChanged {
-                if (it.toString().count() == binding.editEmail.toString().length) {
-                    Log.d(TAG, "EDITTEXT: " + it.toString())
-                    Log.d(TAG, "EDITTEXT: " + binding.editCertifyPassword.toString())
-                    if (it.toString() == binding.editEmail.toString()) {
-                        Log.d(TAG, "EDITTEXT: " + it.toString())
-                        Log.d(TAG, "EDITTEXT: " + binding.editCertifyPassword.toString())
-
-                        binding.editCertifyPassword.setBackgroundResource(R.drawable.inputbox_selector)
-                        binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
-                        binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.black))
-                    }
-                } else if (it.toString().count() != binding.editEmail.toString().count()) {
-                    binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_gray)
-                    binding.btnNext.setTextColor(ContextCompat.getColor(this, R.color.grayText))
-                }
-            }
-        }
+            binding.editEmail.onMyTextChanged {}
+            binding.editCertifyPassword.onMyTextChanged {}
 
         binding.btnNext.setOnClickListener {
             val reg = Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!%*#?&]).{8,32}.$")
@@ -97,12 +67,43 @@ class RegisterMakePasswordActivity : BaseActivity<ActivityMakingPasswordBinding>
                 }
             }
             else {
-                finish()
+                // 프로필 설정창으로 이동
                 startActivity(Intent(this, RegisterMakeProfileActivity::class.java)
                     .putExtra("password", binding.editEmail.text.toString())
-                    .putExtra("email", email))
-                // 프로필 설정창으로 이동
+                    .putExtra("email", email)
+                    .putExtra("phone", phone))
             }
         }
+    }
+
+    override fun EditText.onMyTextChanged(completion: (Editable?) -> Unit) {
+        this.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(editable: Editable?) {}
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(binding.editEmail.isFocused) {
+                    if (binding.editEmail.text.toString().count() == 8) {
+                        binding.editEmail.setBackgroundResource(R.drawable.inputbox_selector)
+                        binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
+                        binding.btnNext.setTextColor(ContextCompat.getColor(context, R.color.black))
+                    } else if (binding.editEmail.text.toString().count() < 8) {
+                        binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_gray)
+                        binding.btnNext.setTextColor(ContextCompat.getColor(context, R.color.grayText))
+                    }
+                }
+                else if(binding.editCertifyPassword.isFocused) {
+                    if (binding.editCertifyPassword.text.toString().count() == binding.editEmail.text.toString().count()) {
+                        if (binding.editCertifyPassword.text.toString() == binding.editEmail.text.toString()) {
+                            binding.editCertifyPassword.setBackgroundResource(R.drawable.inputbox_selector)
+                            binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_yellow)
+                            binding.btnNext.setTextColor(ContextCompat.getColor(context, R.color.black))
+                        }
+                    } else if (binding.editCertifyPassword.text.toString().count() != binding.editEmail.text.toString().count()) {
+                        binding.btnNext.setBackgroundResource(R.drawable.btn_rounded_bg_gray)
+                        binding.btnNext.setTextColor(ContextCompat.getColor(context, R.color.grayText))
+                    }
+                }
+            }
+        })
     }
 }

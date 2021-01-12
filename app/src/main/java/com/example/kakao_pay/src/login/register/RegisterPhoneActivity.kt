@@ -6,8 +6,7 @@ import androidx.core.content.ContextCompat
 import com.example.kakao_pay.R
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivityRegisterPhoneBinding
-import com.example.kakao_pay.src.login.register.email_input.RegisterInputEmailActivity
-import com.example.kakao_pay.src.login.register.phone_input.RegisterInputPhoneActivity
+import com.example.kakao_pay.src.login.register.input_phone.RegisterInputPhoneActivity
 
 class RegisterPhoneActivity : BaseActivity<ActivityRegisterPhoneBinding>(ActivityRegisterPhoneBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {

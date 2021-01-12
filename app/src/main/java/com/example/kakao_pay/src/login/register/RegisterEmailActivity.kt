@@ -1,14 +1,12 @@
 package com.example.kakao_pay.src.login.register
 
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
-import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.kakao_pay.R
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivityRegisterEmailBinding
-import com.example.kakao_pay.src.login.register.email_input.RegisterInputEmailActivity
+import com.example.kakao_pay.src.login.register.input_email.RegisterInputEmailActivity
 
 class RegisterEmailActivity : BaseActivity<ActivityRegisterEmailBinding>(ActivityRegisterEmailBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {

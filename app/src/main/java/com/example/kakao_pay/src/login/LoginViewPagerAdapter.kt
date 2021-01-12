@@ -1,51 +1,40 @@
-//package com.example.kakao_pay.src.login
-//
-//import android.content.Context
-//import android.view.LayoutInflater
-//import android.view.View
-//import android.view.ViewGroup
-//import android.widget.ImageView
-//import androidx.viewpager.widget.PagerAdapter
-//import androidx.viewpager.widget.ViewPager
-//import com.example.kakao_pay.R
-//
-//class LoginViewPagerAdapter(private val context : Context) : PagerAdapter() {
-//
-//    private var layoutInflater : LayoutInflater? = null
-//    val Image = arrayOf(
-//        R.drawable.ai,
-//        R.drawable.css,
-//        R.drawable.html
-//    )
-//
-//
-//    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-//        return view ===  `object`
-//    }
-//
-//    override fun getCount(): Int {
-//        return Image.size
-//    }
-//
-//
-//    override fun instantiateItem(container: ViewGroup, position: Int): Any {
-//        layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//        val v = layoutInflater!!.inflate(R.layout.viewpager_activity, null)
-//        val image = v.findViewById<View>(R.id.imageview) as ImageView
-//
-//        image.setImageResource(Image[position])
-//        val vp = container as ViewPager
-//        vp.addView(v , 0)
-//
-//
-//        return v
-//
-//    }
-//
-//
-//    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-//        val vp = container as ViewPager
-//        val v = `object` as View
-//        vp.removeView(v)
-//    }
-//}
+package com.example.kakao_pay.src.login
+
+import android.content.Context
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.viewpager.widget.PagerAdapter
+import com.example.kakao_pay.R
+import com.example.kakao_pay.src.utils.Constants.TAG
+import kotlinx.android.synthetic.main.item_image.view.*
+
+class LoginViewPagerAdapter(private val imageList : ArrayList<Int>) : PagerAdapter() {
+
+
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view ===  `object`
+    }
+
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        val inflater = LayoutInflater.from(container.context)
+        val view = inflater.inflate(R.layout.item_image, container, false)
+
+        view.imageView.setImageResource(imageList[position])
+
+        container.addView(view)
+
+        return view
+
+    }
+
+    override fun getCount(): Int {
+        return imageList.size
+    }
+
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        container.removeView(`object` as View?)
+    }
+}

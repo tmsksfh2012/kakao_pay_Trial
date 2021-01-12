@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="카카오계정으로 사용할\n이메일을 입력해주세요."
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edit_email"
@@ -27,8 +27,8 @@
         android:layout_height="wrap_content"
         android:hint="이메일 주소 입력"
         android:background="@drawable/inputbox_selector"
-        android:textSize="14sp"
-        android:paddingBottom="15dp"
+        android:textSize="17sp"
+        android:paddingVertical="10dp"
         android:maxLines="1"/>
 
     <LinearLayout

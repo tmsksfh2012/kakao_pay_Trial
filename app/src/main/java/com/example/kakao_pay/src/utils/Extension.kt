@@ -1,27 +1,19 @@
 package com.example.kakao_pay.src.utils
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.*
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.widget.*
 import com.example.kakao_pay.config.ApplicationClass
+import com.example.kakao_pay.src.login.register.RegisterMainActivity
 
 // EditText Extension
-fun EditText.onMyTextChanged(completion: (Editable?) -> Unit){
-    this.addTextChangedListener(object : TextWatcher {
-        override fun afterTextChanged(editable: Editable?) {
-            completion(editable)
-        }
-
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        }
-
-    })
+interface OnMyTextChanged {
+    fun EditText.onMyTextChanged(completion: (Editable?) -> Unit)
 }
 
 fun putUserSelectPosition(position: Int){
@@ -52,4 +44,8 @@ fun putUserCountryCode(countryCode: String){
     val editor = ApplicationClass.sSharedPreferences.edit()
     editor.putString("countryCode",countryCode)
     editor.apply()
+}
+fun backRegisterMain(activity: Activity){
+    activity.finishAffinity()
+    activity.startActivity(Intent(activity, RegisterMainActivity::class.java))
 }

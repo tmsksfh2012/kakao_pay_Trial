@@ -16,21 +16,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="가입을 시작합니다!"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textColor="@color/black"/>
         <TextView
             android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="카카오계정 하나로\nKakao, Daum, Melon 서비스를 모두 이용할 수 있어요."
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:gravity="center"/>
         <TextView
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="카카오계정으로 사용할 이메일이 있나요?"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:gravity="center"/>
 
         <Button
@@ -41,7 +41,7 @@
             android:background="@drawable/btn_rounded_bg_yellow"
             android:text="이메일이 있습니다."
             android:textColor= "@color/black"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:layout_marginHorizontal="20dp"/>
 
         <Button
@@ -52,7 +52,7 @@
             android:background="@drawable/btn_rounded_bg_gray"
             android:text="새 메일이 필요합니다."
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:layout_marginHorizontal="20dp"/>
     </LinearLayout>
 
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사용중인 Daum아이디가 있다면,\n로그인하여 새로운 카카오계정을 만들 수 있어요."
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:gravity="center"/>
         <TextView
             android:id="@+id/daum_id"
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Daum 아이디로 카카오계정 가입"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:gravity="center" />
     </LinearLayout>
 

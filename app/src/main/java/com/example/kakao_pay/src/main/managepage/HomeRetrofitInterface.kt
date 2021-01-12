@@ -1,6 +1,6 @@
 package com.example.kakao_pay.src.main.managepage
 
-import com.example.kakao_pay.src.login.register.email_input.models.PostEmailResponse
+import com.example.kakao_pay.src.login.register.input_email.models.PostEmailResponse
 import com.example.kakao_pay.src.main.managepage.models.PostSignUpRequest
 import com.example.kakao_pay.src.main.managepage.models.SignUpResponse
 import retrofit2.Call

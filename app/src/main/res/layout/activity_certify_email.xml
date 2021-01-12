@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="이메일로 발송된 인증번호를\n입력해주세요."
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edit_email"

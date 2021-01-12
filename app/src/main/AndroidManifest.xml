@@ -37,10 +37,10 @@
         <activity android:name=".src.login.register.RegisterEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".src.login.register.email_input.RegisterInputEmailActivity"
+        <activity android:name=".src.login.register.input_email.RegisterInputEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".src.login.register.email_input.email_certify.RegisterCertifyEmailActivity"
+        <activity android:name=".src.login.register.input_email.certify_email.RegisterCertifyEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".src.login.register.making_password.RegisterMakePasswordActivity"
@@ -55,7 +55,16 @@
         <activity android:name=".src.login.register.RegisterPhoneActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".src.login.register.phone_input.RegisterInputPhoneActivity"
+        <activity android:name=".src.login.register.input_phone.RegisterInputPhoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".src.login.register.input_phone.certify_phone.RegisterCertifyPhoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".src.login.register.making_kakao.RegisterMakeKakaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".src.main.moreviewpage.setting.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 

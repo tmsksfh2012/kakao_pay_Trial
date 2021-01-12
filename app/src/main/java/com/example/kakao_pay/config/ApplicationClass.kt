@@ -27,8 +27,6 @@ class ApplicationClass : Application() {
         val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
         // Retrofit 인스턴스, 앱 실행시 한번만 생성하여 사용합니다.
         lateinit var sRetrofit: Retrofit
-        // 로그인 상태 값
-        var sLogin : Boolean = false
     }
 
     override fun onCreate() {

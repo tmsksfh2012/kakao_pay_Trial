@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/inAppColor"
     tools:context=".src.login.LoginMainActivity">
 
     <ImageView
@@ -16,12 +17,15 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="350dip"
+        android:layout_height="270dip"
         android:layout_marginHorizontal="8dp"/>
+
     <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="35dip"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
         app:ci_drawable="@drawable/black_radius"
         app:ci_height="7dp"
         app:ci_margin="4dp"

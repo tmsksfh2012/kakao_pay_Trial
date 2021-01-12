@@ -7,10 +7,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegisterMakeProfileService(val view : RegisterMakeProfileView) {
+class RegisterMakeProfileService(val view : IRegisterMakeProfileView) {
     fun tryPostProfile(profileRequest : PostProfileRequest){
         val registerProfileRetrofitInterface = ApplicationClass.sRetrofit
-            .create(RegisterMakeProfileRetrofitInterface::class.java)
+            .create(IRegisterMakeProfileRetrofit::class.java)
         registerProfileRetrofitInterface.postProfile(profileRequest).enqueue(object : Callback<PostProfileResponse> {
             override fun onResponse(call: Call<PostProfileResponse>, response: Response<PostProfileResponse>
             ) {

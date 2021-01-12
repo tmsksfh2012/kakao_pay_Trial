@@ -13,6 +13,7 @@
     <color name="blackForText">#4a4a4a</color>
     <color name="redForText">#d9534f</color>
 
+    <color name="inAppColor">#F1F3F5</color>
     <color name="kakaoYellow">#F7E600</color>
     <color name="grayLine">#DFDFDF</color>
     <color name="grayEditText">#C8C8C8</color>

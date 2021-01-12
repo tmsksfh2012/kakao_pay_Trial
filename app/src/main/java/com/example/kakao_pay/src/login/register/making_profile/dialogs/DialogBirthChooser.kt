@@ -16,9 +16,9 @@ import com.example.kakao_pay.src.utils.putUserSelectBirth
 
 
 class DialogBirthChooser : DialogFragment() {
-    lateinit var yy : String
-    lateinit var  mm : String
-    lateinit var  dd : String
+    private var yy : String = "연도"
+    private var  mm : String = "월"
+    private var  dd : String = "일"
     lateinit var mainActivity : RegisterMakeProfileActivity
     var check = false
 
@@ -53,8 +53,13 @@ class DialogBirthChooser : DialogFragment() {
                 })
 
             findViewById<Button>(R.id.btn_date_picker).setOnClickListener {
-                if(mm.length == 1) mm = "0$mm"
-                if(dd.length == 1) dd = "0$dd"
+                if((yy == "연도" || mm == "월") || dd == "일") {
+                    yy = "연도"
+                    mm = "월"
+                    dd = "일"
+                }
+                if(mm.length == 1 && mm != "월") mm = "0$mm"
+                if(dd.length == 1 && dd != "일") dd = "0$dd"
 
                 putUserSelectBirth(yy, mm, dd)
                 mainActivity.onDetached()

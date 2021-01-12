@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="계정 가입을 위해\n휴대폰인증을 진행해주세요."
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/black"/>
 
     <LinearLayout
@@ -31,16 +31,15 @@
         <LinearLayout
             android:id="@+id/country_code_box"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:layout_height="wrap_content">z
             <TextView
                 android:id="@+id/text_country_code"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="+82"
                 android:textSize="14sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:paddingVertical="10dp"/>
             <ImageView
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
@@ -67,24 +66,52 @@
             android:textSize="14sp"
             android:maxLines="1"/>
     </LinearLayout>
-    <EditText
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:id="@+id/edit_auth_num"
+
+    <LinearLayout
+        android:id="@+id/layout_phone_certify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:hint="인증번호 입력"
         android:background="@drawable/inputbox_selector"
-        android:textSize="14sp"
-        android:maxLines="1"
-        android:layout_marginBottom="20dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp" >
+        <EditText
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/edit_auth_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="인증번호 입력"
+            android:textSize="14sp"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:maxLines="1" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/img_cancel"
+            android:layout_gravity="center_vertical"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_cancel"
+            android:layout_marginEnd="10dp"/>
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/timer_certify"
+            android:text="타이머"
+            android:textSize="14sp"
+            android:textColor="@color/grayEditText"/>
+    </LinearLayout>
     <TextView
+        android:id="@+id/no_auth_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="인증번호를 받지 못하셨나요?"
         android:textColor="@color/black"
-        android:textSize="11sp"
+        android:textSize="13sp"
         android:layout_marginBottom="20dp"/>
 
     <Button

@@ -7,7 +7,6 @@
         android:icon="@drawable/photo1"
         app:showAsAction="always"
         android:enabled="true"
-        android:checkable="true"
         android:title="@string/main_btm_nav_manage"/>
     <item
         android:id="@+id/menu_main_btm_nav_send"
@@ -32,5 +31,6 @@
         android:icon="@drawable/photo5"
         app:showAsAction="always"
         android:enabled="true"
+        android:checkable="true"
         android:title="@string/main_btm_nav_more_view"/>
 </menu>

@@ -16,7 +16,6 @@ class CountryCodeRecyclerViewAdapter(countryCodeRecyclerViewInterface: ICountryC
     private lateinit var countryCodeItemViewHolder : CountryCodeViewHolder
 
     init {
-        Log.d(TAG, "CountryCodeRecyclerViewAdapter - init() called")
         this.iCountryCodeRecyclerView = countryCodeRecyclerViewInterface
     }
 

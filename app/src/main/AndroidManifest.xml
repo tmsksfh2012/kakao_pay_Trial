@@ -22,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".src.main.MainActivity"
+        <activity
+            android:name=".src.main.MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".src.login.LoginMainActivity"
@@ -64,7 +66,7 @@
         <activity android:name=".src.login.register.making_kakao.RegisterMakeKakaoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".src.main.moreviewpage.setting.SettingActivity"
+        <activity android:name=".src.main.more.setting.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 

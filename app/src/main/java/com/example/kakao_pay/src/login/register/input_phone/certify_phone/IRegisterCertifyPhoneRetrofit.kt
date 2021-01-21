@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface IRegisterCertifyPhoneRetrofit {
-    @GET("/phone/auth")
+    @GET("/phone-auth")
     fun getPhone(
         @Query("phone") phone : String,
         @Query("auth_number") auth_number : String

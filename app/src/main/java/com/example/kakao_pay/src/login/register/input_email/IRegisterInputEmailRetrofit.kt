@@ -7,6 +7,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface IRegisterInputEmailRetrofit {
-    @POST("/email/auth")
+    @POST("/email-auth")
     fun postEmail(@Body email: PostEmailRequest) : Call<PostEmailResponse>
 }

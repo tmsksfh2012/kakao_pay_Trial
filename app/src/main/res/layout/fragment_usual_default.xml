@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/inAppColor"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="180dp"
+        android:src="@drawable/img_send_usual_default"/>
+    <TextView
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="자주 사용하는\n친구와 계좌가 없습니다."
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <TextView
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="자주 송금하는 친구 또는 계좌를 등록해보세요.\n최근, 친구 또는 계좌 목록에서 등록 가능합니다."
+        android:textColor="@color/grayText"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

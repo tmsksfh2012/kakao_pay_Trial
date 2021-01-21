@@ -6,15 +6,14 @@ import com.example.kakao_pay.R
 import com.example.kakao_pay.config.ApplicationClass
 import com.example.kakao_pay.config.BaseActivity
 import com.example.kakao_pay.databinding.ActivitySuccessMakingProfileBinding
-import com.example.kakao_pay.src.login.ILoginView
-import com.example.kakao_pay.src.login.LoginService
+import com.example.kakao_pay.src.login.retrofit.ILoginView
+import com.example.kakao_pay.src.login.retrofit.LoginService
 import com.example.kakao_pay.src.login.models.PostLoginRequest
 import com.example.kakao_pay.src.login.models.PostLoginResponse
 import com.example.kakao_pay.src.main.MainActivity
-import com.example.kakao_pay.src.utils.Constants.TAG
 
 class RegisterCompleteActivity : BaseActivity<ActivitySuccessMakingProfileBinding>(ActivitySuccessMakingProfileBinding::inflate),
-    ILoginView{
+    ILoginView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,15 +21,15 @@ class RegisterCompleteActivity : BaseActivity<ActivitySuccessMakingProfileBindin
         val nickname = intent.getStringExtra("nickname")!!
         val name = intent.getStringExtra("name")!!
         val birth = intent.getStringExtra("birth")!!
-        val phone = intent.getStringExtra("phone")!!
+        val phone = intent.getStringExtra("phone")
         val password = intent.getStringExtra("password")!!
 
         val edit =  ApplicationClass.sSharedPreferences.edit()
         edit.putString("name", name).putString("birth", birth).putString("phone", phone)
         edit.apply()
 
-        binding.profileImg.background = resources.getDrawable(R.drawable.imgbox_default, null)
-        binding.profileImg.clipToOutline = true
+        binding.successProfileImg.background = resources.getDrawable(R.drawable.imgbox_default, null)
+        binding.successProfileImg.clipToOutline = true
         binding.profileEmail.text = email
         binding.profileNickname.text = nickname
 

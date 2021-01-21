@@ -13,7 +13,7 @@
         android:text="카카오계정 로그인"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
     <View
         android:layout_marginTop="8dip"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dip"
+        android:layout_marginHorizontal="18dip"
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
@@ -34,7 +34,7 @@
         android:textColor="@android:color/black"
         android:hint="카카오메일 아이디, 이메일, 전화번호"
         android:background="@drawable/inputbox_selector"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:paddingVertical="15dp"/>
 
     <EditText
@@ -45,7 +45,7 @@
         android:textColor="@android:color/black"
         android:background="@drawable/inputbox_selector"
         android:hint="비밀번호"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:inputType="textPassword" />
 
     <Button
@@ -53,31 +53,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/grayBg"
+        android:background="@drawable/btn_rounded_bg_gray"
         android:text="로그인"
         android:textColor="@color/grayText"
-        android:textSize="16sp"/>
+        android:textSize="15sp"/>
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:paddingVertical="10dp"
             android:id="@+id/btn_login_manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="로그인 정보를 잊으셨나요?"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textColor="@color/lightGrayText"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:minHeight="0dp"
         android:minWidth="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="새로운 카카오계정 만들기"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textColor="@color/lightGrayText"
         android:background="@drawable/rounded_bg_empty"
         android:layout_gravity="center"/>

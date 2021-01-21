@@ -7,6 +7,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface IRegisterInputPhoneRetrofit {
-    @POST("/phone/auth")
+    @POST("/phone-auth")
     fun postPhone(@Body phone: PostPhoneRequest) : Call<PostPhoneResponse>
 }

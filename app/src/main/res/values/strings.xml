@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">kakao_pay</string>
+
+    <style name="MyItemFont" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <!-- Naming Rules -->
     <!-- 도메인명_컴포넌트함축어_용도(=목적) -->
 

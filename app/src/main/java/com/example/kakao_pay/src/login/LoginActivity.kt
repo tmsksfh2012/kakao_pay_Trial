@@ -16,18 +16,20 @@ import com.example.kakao_pay.src.login.login_manager.DialogLoginManager
 import com.example.kakao_pay.src.login.models.PostLoginRequest
 import com.example.kakao_pay.src.login.models.PostLoginResponse
 import com.example.kakao_pay.src.login.register.RegisterMainActivity
+import com.example.kakao_pay.src.login.retrofit.ILoginView
+import com.example.kakao_pay.src.login.retrofit.LoginService
 import com.example.kakao_pay.src.main.MainActivity
+import com.example.kakao_pay.src.splash.SplashActivity
 import com.example.kakao_pay.src.utils.OnMyTextChanged
-import kotlinx.android.synthetic.main.activity_certify_email.view.*
 
 class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
-    OnMyTextChanged, ILoginView{
+    OnMyTextChanged, ILoginView {
     val reg = Regex("[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\\.[a-zA-Z]{2,3}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var  mLoginManagerDialog = DialogLoginManager()
+        val mLoginManagerDialog = DialogLoginManager()
 
         binding.editLoginId.onMyTextChanged {}
         binding.editLoginPassword.onMyTextChanged {}
@@ -124,7 +126,7 @@ class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inf
                 val editor = ApplicationClass.sSharedPreferences.edit()
                 editor.putString(ApplicationClass.X_ACCESS_TOKEN,token)
                 editor.apply()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, SplashActivity::class.java))
             }
         }
     }

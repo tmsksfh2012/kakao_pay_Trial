@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/inAppColor"
     android:orientation="vertical"
     android:paddingHorizontal="20dp">
@@ -11,31 +12,77 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/white">
-        <EditText
+        android:background="@drawable/dialog_background_rounded">
+        <LinearLayout
+            android:id="@+id/layout_bank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="은행"
-            android:textSize="30sp"
-            android:background="@null"/>
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp">
+            <EditText
+                android:id="@+id/edit_bank"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="은행"
+                android:textSize="22sp"
+                android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
+                android:textColor="@color/black" />
+            <ImageView
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:src="@drawable/img_select"/>
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grayLine"/>
+            android:layout_height="3dp"
+            android:background="@color/inAppColor"/>
         <EditText
+            android:id="@+id/edit_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="계좌번호"
-            android:textSize="30sp"
-            android:background="@null"/>
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:padding="20dp"/>
     </LinearLayout>
-    <Button
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="확인"
-        android:textSize="20sp"/>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/text_my_account"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 계좌로"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btn_check_account"
+            app:layout_constraintTop_toTopOf="@id/text_my_account"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="확인"
+            android:textStyle="bold"
+            android:textColor="@color/grayText"
+            android:background="@drawable/btn_circle"
+            android:textSize="17sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

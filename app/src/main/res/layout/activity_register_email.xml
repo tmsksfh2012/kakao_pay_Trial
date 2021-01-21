@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="25dp"
+    android:paddingHorizontal="18dp"
     android:orientation="vertical">
     <ImageView
         android:id="@+id/back"
-        android:layout_width="30dp"
-        android:layout_height="45dp"
-        android:paddingStart="-10dp"
-        android:paddingTop="20dp"
+        android:layout_width="18dp"
+        android:layout_height="35dp"
+        android:paddingTop="13dp"
         android:src="@drawable/ic_left"
         android:layout_marginBottom="30dp"/>
     <TextView
@@ -49,7 +48,7 @@
             android:layout_marginTop="10dp"
             android:text="전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다. 선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다."
             android:textColor="@color/grayText"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/agree_title_check_box"
             app:layout_constraintEnd_toEndOf="parent"
@@ -135,5 +134,6 @@
         android:layout_height="wrap_content"
         android:text="동의"
         android:background="@drawable/btn_rounded_bg_gray"
-        android:textColor="@color/grayText"/>
+        android:textColor="@color/grayText"
+        android:textSize="15sp"/>
 </LinearLayout>

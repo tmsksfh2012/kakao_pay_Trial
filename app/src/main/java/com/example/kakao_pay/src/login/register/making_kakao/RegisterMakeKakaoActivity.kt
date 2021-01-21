@@ -9,12 +9,12 @@ import android.widget.EditText
 import androidx.core.content.ContextCompat
 import com.example.kakao_pay.R
 import com.example.kakao_pay.config.BaseActivity
-import com.example.kakao_pay.databinding.ActivityMakeKakaoBinding
+import com.example.kakao_pay.databinding.ActivityMakingKakaoBinding
 import com.example.kakao_pay.src.login.register.making_password.RegisterMakePasswordActivity
 import com.example.kakao_pay.src.utils.OnMyTextChanged
 import com.example.kakao_pay.src.utils.backRegisterMain
 
-class RegisterMakeKakaoActivity : BaseActivity<ActivityMakeKakaoBinding>(ActivityMakeKakaoBinding::inflate),
+class RegisterMakeKakaoActivity : BaseActivity<ActivityMakingKakaoBinding>(ActivityMakingKakaoBinding::inflate),
     OnMyTextChanged{
     lateinit var phone : String
     override fun onCreate(savedInstanceState: Bundle?) {

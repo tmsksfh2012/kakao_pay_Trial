@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
-        android:background="@drawable/dialog_background_round"
+        android:background="@drawable/dialog_background_rounded"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content">
